@@ -6,8 +6,10 @@ var app = express();
 app.use('/',express.static('../todos'));
 
 
-app.listen(8080,function(){
-    console.log('App on 8080')
+const port = process.env.PORT ? process.env.PORT : 8000;
+
+app.listen(port,function(){
+    console.log(`App on ${port}`);
 });
 
 // Start MongoDB
